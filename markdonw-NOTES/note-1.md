@@ -1,6 +1,6 @@
-#Sintaxis de markdonw
+# Sintaxis de markdonw
 
-##1-Titulos (Jerarquia)
+## 1-Titulos (Jerarquia)
 
 Usas el simbolo "#", cuantos mas pongas, mas pequenio es el titulo:
 
@@ -10,7 +10,7 @@ Usas el simbolo "#", cuantos mas pongas, mas pequenio es el titulo:
 ###Nota importante (atributos)
 ```
 
-##2-Formato de texto
+## 2-Formato de texto
 
 para resaltar ideas sin gastar tinta ni esfuerzo:
 
@@ -20,7 +20,7 @@ para resaltar ideas sin gastar tinta ni esfuerzo:
 - ~~Tachado~~: para cosas qie ya corregiste.
 ```
 
-##3-Listas (ideales para apuntes)
+## 3-Listas (ideales para apuntes)
 
 para organizar tus ideas rapido:
 
@@ -30,7 +30,7 @@ para organizar tus ideas rapido:
     * Subelemento (un tabulador de espacio).
 ```
 
-##4- Bloques de codigo
+## 4- Bloques de codigo
 
 En lugar de copiar codigo en medio del texto, lo encierras en "backticks" (tilde invertida ```). En NeoVim es genial por que muchos plugins le dan color al codigo dentro del md:
 
@@ -41,7 +41,7 @@ def hola_mundo():
 ```)
 ```
 
-##5- Links y Tareas
+## 5- Links y Tareas
 
 * [Texto del link](url) para guardar enlaces a cosas importantes.
 
