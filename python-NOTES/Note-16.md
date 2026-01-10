@@ -126,3 +126,84 @@ with open(ruta, "r") as archivo:
 * JSON: ideal para configuraciones de APIs.
 
 * CSV: Ideal para bases de datos simples y hojas de calculo.
+
+## Ejemplo complejo
+
+Este es un ejercicio que trate se hacer solo, pero no pude del todo, me ayudo la IA.
+
+```python
+def filtrador(contenito):
+    log_aux= list(map(lambda x: x.strip() , contenito)) #Para quitar los "\n" en cada final de linea
+    errs= list(filter(lambda linea: linea.startswith("ERROR"), log_aux)) #para obtener el inicio de la linea
+    list_errores=list()
+    for error in errs:
+        list_errores.append(error)
+    return list_errores #la mejor forma de retorno que yo pense
+
+def procesar_log(nombre_archivo, funcion_filtro):
+    with open(nombre_archivo, "r") as archivo:
+        contenido= archivo.readlines() #para leer las lineas de forma infdividual
+        log=funcion_filtro(contenido)
+        print(log)
+
+procesar_log("servidor.txt", filtrador)
+```
+
+### Ejemplo de uso completo del modulo json
+
+El siguiente ejemplo da pie al uso de json de forma efectiva, a mi parecer.
+
+```python
+import json
+
+inventario= {"manzanas":10, "peras": 5}
+
+with open("inventario.json", "w") as f:
+    json.dump(inventario, f, indent=4)
+    #el indent ayuda a que sea legible
+
+with open("inventario.json", "r") as f:
+    mi_diccionario= json.load(f)
+    print(mi_diccionario)
+
+
+print("\n--------------\n")
+
+#prueba y practica propia
+inventario_2= {"naranjas": 23, "mangos": 8}
+
+with open("inventario.json", "w") as f:
+    json.dump(inventario_2, f, indent=4)
+
+with open("inventario.json", "r") as f:
+    mi_diccionario= json.load(f)
+    print(mi_diccionario)
+
+#prueba para aniadir
+
+"""
+with open("inventario.json", "a") as f:
+    json.dump(inventario, f, indent=4)
+
+with open("inventario.json", "r") as f:
+    mi_diccionario= json.load(f)
+    print(mi_diccionario)
+"""
+#por alguna razon no funciona
+
+diccionario_completo= {}
+
+
+for key, value in inventario.items():
+    diccionario_completo[key]=value
+
+for key, value in inventario_2.items():
+    diccionario_completo[key]=value
+
+with open("inventario.json", "w") as f:
+    json.dump(diccionario_completo, f, indent=4)
+
+with open("inventario.json", "r") as f:
+    mi_diccionario= json.load(f)
+    print(mi_diccionario)
+```
